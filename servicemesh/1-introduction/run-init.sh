@@ -35,6 +35,9 @@ oc adm policy add-cluster-role-to-user cluster-admin admin
   # Install Istio
   oc apply -f istio-1.4.2/install/kubernetes/istio-demo.yaml
   # Wait for Istio
+  oc get deployment -n istio-system --no-headers | awk '{print $1}' | while read deployment ; do
+    until [ "$(oc get deployment -n istio-system --no-headers $deployment | awk '{print $5}')" -eq 1 ] ; do sleep 1 ; done
+  done
 )
 
 touch /tmp/initialised
