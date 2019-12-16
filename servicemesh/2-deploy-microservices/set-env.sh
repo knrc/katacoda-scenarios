@@ -1,4 +1,5 @@
 /usr/local/bin/launch.sh
-until $(oc get project istio-system &> /dev/null); do sleep 1; done
+echo "Waiting for Initialisation of Istio control plane to complete"
+until [ -f /tmp/initialised ] ; do (echo -n .; sleep 2); done
 mkdir -p ~/projects/ && cd ~/projects/
 export PATH=$PATH:/root/installation/istio-1.4.2/bin

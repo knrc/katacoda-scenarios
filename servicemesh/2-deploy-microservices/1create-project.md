@@ -2,7 +2,7 @@ We will deploy three microservices (customer, preference, recommendation) implem
 
 The `customer` microservice makes a request to `preference` that makes a request to `recommendation`.
 
-Let's deploy each one of them to a new project called `tutorial`.
+Once the initialisation has completed we can deploy each microservice to a new project called `tutorial`.
 
 To create a new project, execute `oc new-project tutorial`{{execute T1}}
 
