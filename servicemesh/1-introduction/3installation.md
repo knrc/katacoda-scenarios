@@ -11,7 +11,7 @@ OpenShift uses the concept of Routes to expose HTTP services outside the cluster
 Let's create routes to external services like `Grafana`, `Prometheus`, `Tracing`, etc using the following command:
 
 `oc expose svc istio-ingressgateway -n istio-system; \
-oc expose svc servicegraph -n istio-system; \
+oc expose svc kiali -n istio-system; \
 oc expose svc grafana -n istio-system; \
 oc expose svc prometheus -n istio-system; \
 oc expose svc tracing -n istio-system`{{execute interrupt T1}}
