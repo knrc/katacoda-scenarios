@@ -19,6 +19,11 @@
     "imageid": "openshift-3-11", "port": 8443
   },
   "details": {
+    "assets": {
+      "host01": [
+          { "file": "install-microservices.sh", "target": "/root/", "chmod": "+x" }
+      ]
+    },
     "finish": {
         "text": "finish.md"
     },
@@ -29,6 +34,7 @@
       "courseData": "run-init.sh"
     },
     "steps": [
+        { "title": "Install microservices", "text": "0install-microservices.md" },
         { "title": "Before start", "text": "1before-start.md" },
         { "title": "Enabling mTLS", "text": "2enabling-mtls.md" }
     ]

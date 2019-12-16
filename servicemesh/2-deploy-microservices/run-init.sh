@@ -17,7 +17,7 @@ wget -c https://github.com/istio/istio/releases/download/1.4.2/istio-1.4.2-linux
   done
 )
 
-until $(oc status &> /dev/null); do sleep 1; done; 
+until $(oc status &> /dev/null); do sleep 1; done;
 
 oc adm policy add-cluster-role-to-user cluster-admin admin
 

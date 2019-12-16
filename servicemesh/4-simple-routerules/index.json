@@ -21,6 +21,7 @@
   "details": {
     "assets": {
       "host01": [
+          { "file": "install-microservices.sh", "target": "/root/", "chmod": "+x" }
       ]
     },
     "finish": {
@@ -33,6 +34,7 @@
       "courseData": "run-init.sh"
     },
     "steps": [
+        { "title": "Install microservices", "text": "0install-microservices.md" },
         { "title": "Modify Recommendation source code", "text": "1modify-recommendation.md" },
         { "title": "All users to recommendation:v2", "text": "2all-usersv2.md" },
         { "title": "All users to recommendation:v1", "text": "3all-usersv1.md" },

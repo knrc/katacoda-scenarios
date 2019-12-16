@@ -21,6 +21,7 @@
   "details": {
     "assets": {
       "host01": [
+          { "file": "install-microservices.sh", "target": "/root/", "chmod": "+x" }
       ]
     },
     "finish": {
@@ -33,6 +34,7 @@
       "courseData": "run-init.sh"
     },
     "steps": [
+        { "title": "Install microservices", "text": "0install-microservices.md" },
         { "title": "Monitoring", "text": "1monitoring.md" },
         { "title": "Custom Metric", "text": "2custom-metric.md" },
         { "title": "Tracing", "text": "3tracing.md" }
