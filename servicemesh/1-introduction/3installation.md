@@ -1,26 +1,8 @@
-To install Istio in the cluster, we need first to make sure that we are logged in as an `system:admin` user.
+The initialisation for this scenario installs an Istio control plane into the istio-system namespace, as soon as the initialisation completes we can log in to the OpenShift cluster and take a look.
 
 To log in the OpenShift cluster, type `oc login -u system:admin`{{execute T1}}
 
-Now that you are logged in, it's time to extract the existing istio installation: `tar -xvzf istio-1.4.2-linux.tar.gz`{{execute T1}}
-
-## Before the installation
-
-Istio uses [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) like `VirtualService`s and `DestinationRule`s.
-
-To allow OpenShift/Kubernetes to understand those values, we first need to install the 'CustomResourceDefinitions' file using the command `oc apply -f istio-1.4.2/install/kubernetes/helm/istio/templates/crds.yaml`{{execute T1}}
-
-## Continue the installation
-
-Istio provides a file `install/kubernetes/istio-demo.yaml` that contains the definition of all objects that needs to be created in the Kubernetes cluster.
-
-Let's apply these definitions to the cluster by executing `oc apply -f istio-1.4.2/install/kubernetes/istio-demo.yaml`{{execute T1}}
-
-After the execution, Istio objects will be created.
-
-To watch the creation of the pods, execute `oc get pods -w -n istio-system`{{execute T1}}
-
-Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scenario.
+We can check on the status of the control plane components by inspecting the pods within the istio-system namespace, execute `oc get pods -n istio-system`{{execute T1}}
 
 ## Create external routes
 
